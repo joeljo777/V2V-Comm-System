@@ -2,6 +2,10 @@
 
 A decentralized, internet-independent Vehicle-to-Vehicle (V2V) safety communication system using LoRa wireless networking. Three or more vehicles equipped with ESP32 boards exchange GPS position and velocity data to detect collision risks in real-time.
 
+## Block Diagram
+
+![Block Diagram](docs/block_diagram.jpeg)
+
 ## System Overview
 
 **Architecture:** Three-node LoRa mesh network with dual-core ESP32 task distribution
