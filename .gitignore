@@ -1,0 +1,21 @@
+# Arduino build and temp files
+*.o
+*.a
+*.d
+*.elf
+*.hex
+*.bin
+*.map
+
+# IDE and OS files
+.vscode/
+.idea/
+*.code-workspace
+.DS_Store
+Thumbs.db
+
+# Python / misc (if used for tooling)
+__pycache__/
+*.pyc
+venv/
+.env
