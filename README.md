@@ -4,7 +4,9 @@ A decentralized, internet-independent Vehicle-to-Vehicle (V2V) safety communicat
 
 ## Block Diagram
 
-![Block Diagram](docs/block_diagram.jpeg)
+<div align="center">
+  <img src="docs/block_diagram.jpeg" alt="Vehicle-to-Vehicle Communication System Architecture" width="900">
+</div>
 
 ## System Overview
 
