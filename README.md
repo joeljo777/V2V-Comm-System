@@ -11,7 +11,7 @@ A decentralized, internet-independent Vehicle-to-Vehicle (V2V) safety communicat
 ## Circuit Diagram
 
 <div align="center">
-  <img src="../V2V-Comm-System/circuit_diagram.png" alt="V2V System Circuit Diagram" width="900">
+  <img src="docs/circuit_diagram.png" alt="V2V System Circuit Diagram" width="900">
 </div>
 
 ## System Overview
