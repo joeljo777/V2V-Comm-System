@@ -8,6 +8,12 @@ A decentralized, internet-independent Vehicle-to-Vehicle (V2V) safety communicat
   <img src="docs/block_diagram.jpeg" alt="Vehicle-to-Vehicle Communication System Architecture" width="900">
 </div>
 
+## Circuit Diagram
+
+<div align="center">
+  <img src="../V2V-Comm-System/circuit_diagram.png" alt="V2V System Circuit Diagram" width="900">
+</div>
+
 ## System Overview
 
 **Architecture:** Three-node LoRa mesh network with dual-core ESP32 task distribution
