@@ -1,0 +1,44 @@
+V2V Communication System - Block Diagram
+==========================================
+
+The block diagram shows a three-vehicle LoRa-based V2V communication system:
+
+VEHICLE 1 (MY_ID=1) - Transmitter:
+- NEO-6M GPS module (UART 16/17 output: lat/lon/spd)
+- SX1278/RA-02 LoRa 433MHz module
+- ESP32 Board with dual-core workaround:
+  * Core 1: Transmit Task - reads GPS, builds JSON, broadcasts with jitter
+  * Core 0: idle
+- GPIO15: LED status
+- GPIO4: (reserved)
+- SPI: NSS=5, SCK=18, MOSI=23, RST=14, DIO0=2
+
+VEHICLE 2 (MY_ID=2) - Receiver & Processor:
+- Same hardware as Vehicle 1
+- Core 0: Receive & Process Task - parses JSON, stores vehicle data
+- Core 1: (reserved for future tasks)
+- Collision Detection Logic
+- GPIO15: LED alert
+- GPIO4: Buzzer alert
+- MISO=19 (added to SPI config)
+
+VEHICLE 3 (MY_ID=3) - Development Board:
+- Central monitoring/development station
+- Active piezo buzzer + LED outputs
+- Receives broadcast packets from vehicles 1 & 2
+- Calculates collision risk metrics
+
+COMMUNICATION PROTOCOL:
+- LoRa Broadcast: 433MHz, ~1.2-1.6s interval per packet
+- Each packet: JSON with {id, lat, lon, spd}
+- Random jitter delay before transmission
+
+COLLISION DETECTION:
+- Haversine distance calculation
+- Alert if: distance < 80m AND relative speed > 15 km/h
+- Output: Buzzer + LED alert (auto-resolves when safe)
+
+DATA MANAGEMENT:
+- Each vehicle maintains array of latest data from other vehicles
+- Timestamps tracked (stale data >10s cleared)
+- Self ID ignored during receive
