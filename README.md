@@ -370,7 +370,7 @@ This project is provided as-is for educational and research purposes.
 ## 👤 Contributors
 
 **Development Team:**
-- Final Year Engineering Project
+- Pre Final Year Engineering Project
 - Developed with Arduino IDE + FreeRTOS
 - Debugged and optimized for real-world conditions
 
